@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang='cs'>
+	<head>
+		<title>Lakeside Books</title>
+		<meta charset='utf-8'>
+		<meta name='description' content='Lakeside Books located in Clonakilty, West Cork is an independent bookseller'>
+		<meta name='keywords' content='Book Shop, Book Store, independent bookseller, Clonakilty Bookshop, Clonakilty, West Cork'>
+		<meta name='author' content='Katie Griffiths'>
+		<meta name='robots' content='all'>
+		<link rel="shortcut icon" href="favicon.ico" />
+		<!-- <meta http-equiv='X-UA-Compatible' content='IE=edge'> -->
+		<link href='css/screen.css' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+		<script type="text/javascript" src="slick/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript" src="slick/jquery-migrate-1.2.1.min.js"></script>
+		<script type="text/javascript" src="slick/slick.min.js"></script>
+		<script type="text/javascript">
+			function getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2) {
+			  var R = 6371; // Radius of the earth in km
+			  var dLat = deg2rad(lat2-lat1);  // deg2rad below
+			  var dLon = deg2rad(lon2-lon1); 
+			  var a = 
+			    Math.sin(dLat/2) * Math.sin(dLat/2) +
+			    Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * 
+			    Math.sin(dLon/2) * Math.sin(dLon/2)
+			    ; 
+			  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+			  var d = R * c; // Distance in km
+			  return d.toFixed(2);
+			}
+
+			function deg2rad(deg) {
+			  return deg * (Math.PI/180)
+			}
+
+			$(document).ready(function(){
+				$('#picture-viewer').slick({
+					autoplay:true,
+					slidesToShow:6,
+					dots:true,
+					arrows:false,
+					centerMode: true,
+				});
+				$('#slideshow').slick({
+					autoplay:true,
+					slidesToShow:1,
+					dots:true,        
+					arrows:true,
+				});
+
+				navigator.geolocation.getCurrentPosition(function (position) {
+					document.getElementById ('visitus').style.display = 'block';
+					document.getElementById ('distance').innerHTML = getDistanceFromLatLonInKm(52.286803, -9.673065, position.coords.latitude, position.coords.longitude);
+				});
+			});    
+		</script>
+	</head>
+	<body>
+		<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.3&appId=249791745033218";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+		</script>
+		<div id="container">
+			<div id="header">
+				<h1 id="top">Lakeside Books</h1>
+				<div id="search">
+					<input type="text" placeholder="search">
+					<button>search</button>
+				</div>
+				<div style="clear:both;"></div>
+				<div id="menu">
+					<div class="menu-container">
+						<a href="#menu" class="menu-button">Menu</a>
+						<div class="menu">
+							<a href="index.html" class="this_page">Home</a>
+							<a href="pages/recommended.html">Recommended</a>
+							<a href="pages/news.html">News &amp; Events</a>
+							<a href="pages/book_club.html">Book Club</a>
+						</div>
+					</div>
+				</div>
+			</div>   
+			<div id="content">
+				<div id="col1">
+					<div class="submenu">
+						<h4>Best Sellers</h4>
+						<ul>
+							<li><a href="pages/recommended.html">Fiction</a></li>
+							<li><a href="pages/recommended.html">Non-Fiction</a></li>
+							<li><a href="pages/recommended.html">Biography</a></li>
+							<li><a href="pages/recommended.html" class="last">Comics</a></li>
+						</ul>
+					</div>
+					<div class="submenu">
+						<h4>Recommended</h4>
+						<ul>
+							<li><a href="http://www.powells.com/section/staff-picks/">Staff Picks</a></li>
+							<li><a href="https://www.waterstones.com/books-of-the-month">Book of the Month</a></li>
+							<li><a href="https://www.waterstones.com/books/bestsellers">Best Selling</a></li>
+							<li><a href="http://www.whsmith.co.uk/offers/">In Store Offers</a></li>
+						</ul>
+					</div>
+					<div id="media" style="height:100px;">
+						<h4>Social Media</h4>
+						<div class="fb-page" data-href="http://www.facebook.com/MoravianBkShop" data-width="280" data-height="130" data-hide-cover="true" data-show-facepile="false" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="http://www.facebook.com/MoravianBkShop"><a href="http://www.facebook.com/MoravianBkShop">Moravian Book Shop</a></blockquote></div></div>
+					</div>
+				</div>
+				<div id="col2">
+					<div id="slideshow">
+						<div><img src="images/store/display.jpg" alt="Image 1" /></div>
+						<div><img src="images/store/books.jpg" alt="Image 2" /></div>
+						<div><img src="images/store/inside.jpg" alt="Image 3" /></div>
+						<div><img src="images/store/inside2.jpg" alt="Image 4" /></div>
+						<div><img src="images/store/inside3.jpg" alt="Image 5" /></div>          
+					</div>     
+					<div class="centertext">
+						<h2>Whats New</h2>
+						<p><img src="images/webdesign.jpg" alt="Image" style="float:left;" /> Welcome to Lakeside Books, based in Clonakilty, West Cork. Having just re-located to a bigger premises, we are now able to stock more of those great books also more on what's hot in the new book club and with new book reviews coming in, you'll have a chance to get to know that very special book you've been looking for.</p>
+						<p>With it comming into a new season of books, we have a great selection for you to choose from.
+						We stock a large range of books not only in our store but also online here, ranging from old time classics to what all the kids are reading these days. A great new selection of comics are being brought in as well, not just for kids but for the super hero in us all.</p>
+						<p id="visitus">You are only <span id="distance"></span>km away. Why not visit us now?</p>
+					</div>
+					<div id="picture-viewer">
+						<div><img src="images/book-covers/book1.jpg" alt="Image 1" /></div>
+						<div><img src="images/book-covers/book2.jpg" alt="Image 2" /></div>
+						<div><img src="images/book-covers/book3.jpg" alt="Image 3" /></div>
+						<div><img src="images/book-covers/book4.jpg" alt="Image 4" /></div> 
+						<div><img src="images/book-covers/book5.jpg" alt="Image 5" /></div> 
+						<div><img src="images/book-covers/book6.jpg" alt="Image 6" /></div> 
+						<div><img src="images/book-covers/book7.jpg" alt="Image 7" /></div> 
+						<div><img src="images/book-covers/book8.jpg" alt="Image 8" /></div> 
+						<div><img src="images/book-covers/book9.jpg" alt="Image 9" /></div> 
+						<div><img src="images/book-covers/book10.jpg" alt="Image 10" /></div>          
+					</div>
+				</div>                
+				<div id="col3">
+					<div class="submenu">
+						<h4>Children</h4>
+						<ul>
+							<li><a href="http://www.oliverjeffers.com/picture-books/stuck">Picture Books</a></li>
+							<li><a href="http://www.chinaberry.com/Books-and-Audio-Age-8-and-Up-Complete-Selection">Age 8-12</a></li>
+							<li><a href="https://www.goodreads.com/list/tag/young-adult">Young adults</a></li>
+							<li><a href="http://www.barnesandnoble.com/u/Baby-Books-Toddlers-Books/379003148/">Babys</a></li>
+						</ul>
+					</div>
+					<div class="submenu">
+						<h4>Local Events</h4>
+						<ul>
+							<li><a href="http://www.clonakilty.ie/baltimore-fiddle-fair/"></a>Baltimore Fiddle Fair</li>
+							<li><a href="http://www.clonakilty.ie/jazz-festival/"></a>Jazz Festival</li>
+							<li><a href="http://www.clonakilty.ie/seafood-festival/"></a>Seafood Festival</li>
+							<li><a href="http://www.clonakilty.ie/noel-redding-weekend/"></a>Noel Redding</li>
+						</ul>
+					</div>
+					<div id="letter">
+						<h4>News Letter</h4>
+						<input type="text" placeholder="Email Address">
+						<button>Sign Up</button>
+					</div>
+				</div>
+			</div> 
+			<div id="footer">
+				<div class="copy">&copy; copywrite bookshop - <a href="#">Sitemap</a></div>
+				<div class="backtotop"><a href="#top">Back to top</a></div>    
+				<div style="clear:both;"></div>
+			</div>
+		</div>
+	</body>
+</html>
+
+<!-- 
+jquery : http://www.jquery.com
+sliders : http://kenwheeler.github.io/slick/
+
+images
+display-https://bschillace.files.wordpress.com/2012/07/img_20181.jpg
+inside2-https://www.google.ie/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0CAYQjB0&url=http%3A%2F%2Fkuponkulo.googlecode.com%2Fsvn%2Ftrunk%2Fimg%2F&ei=ZiwZVeT7AsHh7AatxoCYDA&psig=AFQjCNEwrXnc_Or7bq4qZxa4pohXQikfDw&ust=1427799438792730
+inside3-http://www.ikewrites.com/wp-content/uploads/2010/06/cool_bookstore.jpg
+open-books-http://www.thewhyofdevelopment.com/wp-content/uploads/2014/09/Books.jpg
+KIDS
+kids1-https://s-media-cache-ak0.pinimg.com/236x/a8/51/59/a851599b63087bfff37bf34cab8de013.jpg
+kids2-http://clatl.com/imager/wimpy_kid/b/original/1444174/e5f7/wimpy_kid.jpg
+kids3-http://img2.imagesbn.com/p/9780394800011_p0_v4_s260x420.JPG
+kids4-http://i.dailymail.co.uk/i/pix/2008/09/03/article-0-0281AB7100000578-531_233x299.jpg
+kids5-http://d.gr-assets.com/books/1388793265l/39988.jpg
+kids6-http://www.toledoblade.com/image/2004/09/29/800x_b1_cCM_z/Popular-kids-books-spark-controversy.jpg
+kids7-http://www.lisingfamily.com/wp-content/uploads/2012/10/For-James-New-Kids-Books-We-Love.jpg
+kids8-https://d.gr-assets.com/books/1347517273l/231850.jpg
+kids9-https://terbsworld.files.wordpress.com/2008/08/roald-dahl-the-bfg.jpg
+kids10-http://sharonpstanley.weebly.com/uploads/2/3/1/8/23189894/2872816.jpg?310
+FICTION
+fiction1-http://d.gr-assets.com/books/1358275334l/2767052.jpg
+fiction2-http://d.gr-assets.com/books/1303252999l/968.jpg
+fiction3-http://d.gr-assets.com/books/1346100365l/4667024.jpg
+fiction4-https://overbookedlibrarian.files.wordpress.com/2009/12/kiterunner.jpg
+fiction5-https://s-media-cache-ak0.pinimg.com/236x/a8/0e/2d/a80e2d96bfe53f9fd47fe53eac200b9c.jpg
+fiction6-https://s-media-cache-ak0.pinimg.com/236x/7d/ca/53/7dca532d861f9ae2a02c3f6d6640f999.jpg
+fiction7-http://img.timeinc.net/time/2011/top_10s/top10_fiction_books/a_dance_with_dragons.jpg
+fiction8-http://www.bookcountry.com/uploadedImages/Book_Country/Read_and_Review/Books/Genre_Map/Fiction_Other/Comedic_Fiction/comedic_fiction_book_about_a_boy.jpg
+fiction9-https://d1fd687oe6a92y.cloudfront.net/files/2013/03/26/The_giver.JPG
+fiction10-https://manderse11.files.wordpress.com/2013/01/onemoment.jpg
+BOOK-COLLECTIONS
+fiction-http://i.telegraph.co.uk/multimedia/archive/03014/comp_3014772b.jpg
+kids-http://i.telegraph.co.uk/multimedia/archive/03006/Children_s-image_3006216b.jpg
+non-fiction-http://cache.boston.com/bonzai-fba/Original_Photo/2010/12/10/books__1292006401_7853.jpg
+comics-http://www.comicsavenue.com/wp-content/uploads/2015/01/ComicsIntro1.jpg
+NON-FICTION
+non-fiction1-http://d.gr-assets.com/books/1358276407l/48855.jpg
+non-fiction2-http://cdn2-b.examiner.com/sites/default/files/styles/image_content_width/hash/a0/91/a0912c653933b8ff6fc9e84abd0b78f7.jpg?itok=zpP4f-GN
+non-fiction3-http://d.gr-assets.com/books/1294023455l/19501.jpg
+non-fiction4-http://www.bookcountry.com/uploadedImages/Book_Country/Read_and_Review/Books/Genre_Map/Nonfiction/Memoir/Memoir_Book_The_Year_Of_Magical_Thinking.jpg
+non-fiction5-http://www.whorublog.com/wp-content/uploads/2013/01/Titanic.jpg
+non-fiction6-http://media.tumblr.com/21dbd4d2851d1f536925fc1e9c728a2b/tumblr_inline_mpiafz0Z071qz4rgp.jpg
+non-fiction7-http://www.urbanfonts.com/blog/wp-content/uploads/2013/02/blink2-673x1024.jpg
+non-fiction8-https://s-media-cache-ak0.pinimg.com/236x/50/d7/d0/50d7d01240149e254ae2f889e66d1b1b.jpg
+non-fiction9- http://wryter.ca/040~Non-Fiction_Books/.Books/Sunrise.jpg
+non-fiction10-http://i1289.photobucket.com/albums/b504/AuthorToBe/7379.jpg
+BIOGRAPHYS
+bio1-https://d.gr-assets.com/books/1328011405l/10884.jpg
+bio2-http://cache.coverbrowser.com/image/bestsellers-2007/3068-1.jpg
+bio3-http://i43.tower.com/images/mm115351739/walt-disney-biography-louise-krasniewicz-hardcover-cover-art.jpg
+bio4-http://ecx.images-amazon.com/images/I/91NySnKi9BL._SL1500_.jpg
+bio5-http://cdn.images.express.co.uk/img/dynamic/39/285x214/351537_1.jpg
+bio6-http://d.gr-assets.com/books/1320462038l/9396821.jpg
+bio7-https://images-na.ssl-images-amazon.com/images/I/41d-jSxfSML._UY250_.jpg
+bio8-http://d.gr-assets.com/books/1344605990l/13154128.jpg
+bio9-https://s-media-cache-ak0.pinimg.com/236x/26/67/fd/2667fd9938955e4920bb2ab57fce25c1.jpg
+bio10-http://ecx.images-amazon.com/images/I/51wSGOJiTVL.jpg
+COMICS
+comic1-http://urbanbohemian.com/wordpress/wp-content/uploads/2012/04/visa_avengers_01.jpg
+comic2-http://www.barnorama.com/wp-content/images/2012/03/Comic-Books-Came-20%20Years/23-Comic-Books-Came-20%20Years.jpg
+comic3-http://www.empireonline.com/images/image_index/original/73516.jpg
+comic4-http://www.lib.uiowa.edu/scua/msc/tomsc900/msc883/images/silversurfer_small_001.jpg
+comic5-http://www.comicsreporter.com/images/uploads/jungleaction01sunday_thumb.jpg
+comic7-http://www.mrgraymedia.co.uk/gcsemedia/images/comics/superman.jpg
+comic8-http://upload.wikimedia.org/wikipedia/commons/2/29/WonderworldComics3.jpg
+comic9-http://images5.fanpop.com/image/photos/31000000/comic-book-covers-superheroes-of-today-31077669-1032-1600.jpg
+comic10-http://www.zonanegativa.com/imagenes/2011/09/6051.jpg
+BOOK COVERS
+book-cover1-http://www.smashingmagazine.com/images/book-covers/book-covers-18.jpg
+book-cover2-http://www.skipprichard.com/wp-content/uploads/2013/01/SelectionBookCover.jpg
+book-cover3-http://www.skipprichard.com/wp-content/uploads/2013/01/lovedoes.jpg
+book-cover4-http://blogs.ivpress.com/img/bb_just_courage_2.jpg
+book-cover5-https://orgtheory.files.wordpress.com/2006/07/spacebetween.jpg
+book-cover6-http://voices.washingtonpost.com/shortstack/Fancy%20galley%20Copy.jpg
+book-cover7-http://cdn.pastemagazine.com/www/system/images/photo_albums/hobbit-book-covers/large/photo_5653_0-6.jpg?1384968217
+book-cover8-https://flavorwire.files.wordpress.com/2011/09/catch-22_cover.jpg
+book-cover9-http://shopbuy.org/static/category/original/book-covers/ma_lg_book_covers_pandemic.jpg
+book-cover10-http://books.sorodesign.com/wp-content/uploads/2008/09/beauty-book-cover3.jpg 
+-->
